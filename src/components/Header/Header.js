@@ -1,8 +1,10 @@
 import React from 'react';
 
+import s from './Header.module.scss';
+
 function Header() {
   return (
-    <header>
+    <header className={s.header}>
       <h1>Word Game</h1>
     </header>
   );

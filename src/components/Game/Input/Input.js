@@ -1,5 +1,7 @@
 import React from 'react';
 
+import s from './Input.module.scss';
+
 function Input({ handleNewGuess, gameState }) {
   const [guess, setGuess] = React.useState('');
 
@@ -30,7 +32,7 @@ function Input({ handleNewGuess, gameState }) {
 
   return (
     <form 
-      className="guess-input-wrapper" 
+      className={s.guessInputWrapper} 
       onSubmit={$event => handleFormSubmit($event)}
     >
       <label htmlFor="guess-input">

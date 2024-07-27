@@ -5,13 +5,15 @@ import { range } from '../../../utils';
 
 import Row from './Row/Row';
 
+import s from './Grid.module.scss';
+
 function Grid({ guesses, answer }) {
   console.log('grid guesses:', guesses);
   
   return (
-    <div className="guess-results">
-      {range(NUM_OF_GUESSES_ALLOWED).map((i) => (
-        <Row key={i} guess={guesses[i]} answer={answer}></Row>
+    <div className={s.guessResults}>
+      {range(NUM_OF_GUESSES_ALLOWED).map((num, i, array) => (
+        <Row key={num} guess={guesses[num]} answer={answer} firstRow={i === 0} lastRow={i === array.length - 1}></Row>
       ))}
     </div>
   );

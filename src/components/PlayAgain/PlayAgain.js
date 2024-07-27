@@ -1,5 +1,7 @@
 import React from 'react';
 
+import s from './PlayAgain.module.scss';
+
 function PlayAgain({ handleResetGame }) {
 
   const buttonRef = React.useRef(null);
@@ -11,7 +13,7 @@ function PlayAgain({ handleResetGame }) {
   }, [handleResetGame]);
 
   return (
-    <button ref={buttonRef} className="outline-button" onClick={handleResetGame}>Play Again</button>
+    <button ref={buttonRef} className={s.outlineButton} onClick={handleResetGame}>Play Again</button>
   );
 }
 

@@ -9,6 +9,8 @@ import Grid from './Grid';
 import GameLostBanner from '../GameLostBanner';
 import GameWonBanner from '../GameWonBanner';
 
+import s from './Game.module.scss';
+
 
 function Game() {
   // Pick a random answer word.

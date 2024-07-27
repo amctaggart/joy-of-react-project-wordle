@@ -1,0 +1,53 @@
+.guess {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.cell {
+  position: relative;
+  width: 20%;
+  display: grid;
+  place-content: center;
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--color-gray-700);
+  border-radius: var(--radius);
+  font-size: 2rem;
+}
+
+.cell.correct {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
+.cell.incorrect {
+  background: var(--color-gray-300);
+  border-color: var(--color-gray-300);
+  color: white;
+}
+.cell.misplaced {
+  background: var(--color-warning);
+  border-color: var(--color-warning);
+  color: white;
+}
+
+/*
+  Round the corners for the 4 cells at the very corners of
+  the game board
+*/
+.cell {
+  --rounded-value: 4px;
+}
+
+.cell.topLeft {
+  --radius: var(--rounded-value) 0px 0px 0px;
+}
+.cell.topRight {
+  --radius: 0px var(--rounded-value) 0px 0px;
+}
+.cell.bottomLeft {
+  --radius: 0px 0px 0px var(--rounded-value);
+}
+.cell.bottomRight {
+  --radius: 0px 0px var(--rounded-value) 0px;
+}
