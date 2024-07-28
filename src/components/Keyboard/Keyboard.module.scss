@@ -1,0 +1,41 @@
+.keyboard {
+  --keyboard-gap: 6px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--keyboard-gap);
+  user-select: none;
+}
+
+.keyboardRow {
+  flex-shrink: 0;
+  display: flex;
+  gap: var(--keyboard-gap);
+}
+
+.keyboardButton {
+  width: 3ch;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-100);
+  font-weight: bold;
+}
+
+.keyboardButton.correct {
+  background: var(--color-success);
+  color: var(--color-gray-900);
+}
+
+.keyboardButton.misplaced {
+  background: var(--color-warning);
+  color: var(--color-gray-900);
+}
+
+.keyboardButton.incorrect {
+  background: var(--color-gray-300);
+  color: var(--color-gray-900);
+}

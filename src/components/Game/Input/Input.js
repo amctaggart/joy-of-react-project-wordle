@@ -25,7 +25,6 @@ function Input({ handleNewGuess, gameState }) {
       return;
     }
     const nextGuess = guess;
-    console.log('next guess:', nextGuess);
     handleNewGuess(nextGuess);
     setGuess('');
   }

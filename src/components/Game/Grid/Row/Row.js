@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { range } from '../../../../utils';
-import { checkGuess } from '../../../../game-helpers';
 
 import s from './Row.module.scss';
 
@@ -22,9 +21,7 @@ function Cell({ letter, status, topLeft, topRight, bottomLeft, bottomRight }) {
   );
 }
 
-function Row({ guess, answer, firstRow, lastRow }) {
-  const checkedGuess = guess ? checkGuess(guess, answer) : [];
-
+function Row({ checkedGuess, firstRow, lastRow }) {
   return (
     <p 
       className={s.guess}
@@ -32,8 +29,8 @@ function Row({ guess, answer, firstRow, lastRow }) {
       {range(5).map((num, i, array) => (
         <Cell 
           key={num} 
-          letter={checkedGuess[num]?.letter ?? ''} 
-          status={checkedGuess[num]?.status} 
+          letter={checkedGuess ? checkedGuess[num]?.letter : ''} 
+          status={checkedGuess ? checkedGuess[num]?.status : undefined} 
           topLeft={firstRow && i === 0}
           topRight={firstRow && i === array.length - 1}
           bottomLeft={lastRow && i === 0}
